@@ -1,12 +1,8 @@
 # DevSecOps Exercise
 
-Exercise to provide DevSecOps for a REST API.
+Exercise to provide DevSecOps for a REST API to manage a warehouse which is using an in-memory data store.
 
 ![Codit logo](./media/logo.png)
-
-## What is it?
-
-A REST API to manage a warehouse which is using an in-memory data store.
 
 ## Challenge
 
