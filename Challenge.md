@@ -4,7 +4,7 @@ This GitHub repo contains a REST API which provides information about storage.
 
 It's up to you to :
 
-- Build, tag & push container to an Azure Container Registry
+- Build, tag & push container to an Azure Container Registry _(Based on [our Dockerfile](https://github.com/CoditEU/devsecops-exercise/blob/master/src/Codit.Exercises.DevSecOps.API/Dockerfile))_
 - Deploy API on Azure Web App for Containers with Azure Pipelines
 
 Once that's done, we suggest to pick one of these tasks:
