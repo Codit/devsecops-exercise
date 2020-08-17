@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  codit.exercises.devsecops.api:
+    image: coditeu/exercises.devsecops.api
+    build:
+      context: .
+      dockerfile: Codit.Exercises.DevSecOps.API/Dockerfile

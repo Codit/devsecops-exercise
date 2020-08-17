@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  codit.exercises.devsecops.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - HTTP_PORT=80
+      - ApplicationInsights-InstrumentationKey=<omitted>
+    ports:
+      - "777:80"
