@@ -1,27 +1,52 @@
 # DevSecOps Exercise
 
-Exercise to implement DevSecOps.
+Exercise to provide DevSecOps for a REST API.
 
 ![Codit logo](./media/logo.png)
 
+## What is it?
+
+A REST API to manage a warehouse which is using an in-memory data store.
+
 ## Challenge
 
-We will provide a GitHub repo with a basic API:
+Now it's up to you! Read more about our [challenge](Challenge.md) and get started!
 
-- Build, tag & push container to Azure Container Registry
-- Deploy API on Azure Web App for Containers
+## Getting Started
 
-Once that's done, we suggest to pick one of these tasks:
+### Running it locally
 
-- Automated vulnerability scanning in the release pipeline
-- Secure with Azure Application Gateway (WAF)
-- Secure with 42Crunch
+You can easily run the sample locally:
 
-### Bonus points
+1. Change `src/docker-compose.override.yml` with your own configuration
+2. Navigate to `src/` folder
+3. Start up with Docker Compose
+```shell
+$ docker-compose up
+```
+4. Browse to http://localhost:777/api/docs/index.html
 
-Already done? Here are some more tasks as bonus points:
+### Running the tests
 
-- Automated vulnerability scanning in the release pipeline _(if not done already)_
-- Secure with Azure Application Gateway (WAF) _(if not done already)_
-- Secure with 42Crunch _(if not done already)_
-- Provide infrastructure-as-code to manage Azure resource (ARM, terraform)
+We provide two types of tests:
+
+- `Integration` - Sends HTTP requests to a running API to verify all operations
+- `Smoke` - Sends HTTP requests to a running API to verify it's up and running, without changing any data
+
+Here is how you can run the tests locally:
+
+```shell
+$ dotnet test .\src\Codit.Exercises.DevOps.Tests\Codit.Exercises.DevOps.Tests.csproj --filter Category=Smoke
+Test run for D:\Code\GitHub\devsecops-exercise\src\Codit.Exercises.DevOps.Tests\bin\Debug\netcoreapp3.1\Codit.Exercises.DevOps.Tests.dll(.NETCoreApp,Version=v3.1)
+Microsoft (R) Test Execution Command Line Tool Version 16.5.0
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+Starting test execution, please wait...
+
+A total of 1 test files matched the specified pattern.
+
+Test Run Successful.
+Total tests: 2
+     Passed: 2
+ Total time: 1,6618 Seconds
+```
