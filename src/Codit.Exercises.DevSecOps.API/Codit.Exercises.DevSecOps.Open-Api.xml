@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Codit.Exercises.DevSecOps.API</name>
+    </assembly>
+    <members>
+        <member name="T:Codit.Exercises.DevSecOps.API.Controllers.HealthController">
+            <summary>
+            API endpoint to check the health of the application.
+            </summary>
+        </member>
+        <member name="M:Codit.Exercises.DevSecOps.API.Controllers.HealthController.#ctor(Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Codit.Exercises.DevSecOps.API.Controllers.HealthController"/> class.
+            </summary>
+            <param name="healthCheckService">The service to provide the health of the API application.</param>
+        </member>
+        <member name="M:Codit.Exercises.DevSecOps.API.Controllers.HealthController.Get">
+            <summary>
+                Get Health
+            </summary>
+            <remarks>Provides an indication about the health of the API.</remarks>
+            <response code="200">API is healthy</response>
+            <response code="503">API is unhealthy or in degraded state</response>
+        </member>
+        <member name="T:Codit.Exercises.DevSecOps.API.Controllers.ProductController">
+            <summary>
+            API endpoint to explore and manage products in the warehouse.
+            </summary>
+        </member>
+        <member name="M:Codit.Exercises.DevSecOps.API.Controllers.ProductController.#ctor(Codit.Exercises.DevSecOps.Core.Repositories.IProductRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Codit.Exercises.DevSecOps.API.Controllers.ProductController"/> class.
+            </summary>
+            <param name="productRepository">Repository providing information about products in our warehouse.</param>
+        </member>
+        <member name="M:Codit.Exercises.DevSecOps.API.Controllers.ProductController.Get">
+            <summary>
+                Get Products
+            </summary>
+            <remarks>Provides an overview of the products in our warehouse.</remarks>
+            <response code="200">Product information is provided</response>
+            <response code="500">We're expecting failures in our backend</response>
+        </member>
+        <member name="M:Codit.Exercises.DevSecOps.API.Controllers.ProductController.New(Codit.Exercises.DevSecOps.Core.Model.Product)">
+            <summary>
+                New Product
+            </summary>
+            <remarks>Introduces a new product in our warehouse.</remarks>
+            <response code="201">New product is persisted</response>
+            <response code="409">Product with same name already exists</response>
+            <response code="500">We're expecting failures in our backend</response>
+        </member>
+        <member name="M:Codit.Exercises.DevSecOps.API.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Codit.Exercises.DevSecOps.API.Startup"/> class.
+            </summary>
+        </member>
+        <member name="P:Codit.Exercises.DevSecOps.API.Startup.Configuration">
+            <summary>
+            Gets the configuration of key/value application properties.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Builder.IApplicationBuilderExtensions.UseOpenApi(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+                Adds Open API documentation UI
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.IServiceCollectionExtensions.AddOpenApi(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+                Adds Open API documentation generation
+            </summary>
+        </member>
+    </members>
+</doc>
