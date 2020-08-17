@@ -2,6 +2,8 @@ using System;
 using System.Linq;
 using System.Text.Json.Serialization;
 using Arcus.Security.Core;
+using Codit.Exercises.DevSecOps.Core.Repositories;
+using Codit.Exercises.DevSecOps.Data.InMemory;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -46,6 +48,8 @@ namespace Codit.Exercises.DevSecOps.API
                 RestrictToJsonContentType(options);
                 AddEnumAsStringRepresentation(options);
             });
+
+            services.AddSingleton<IProductRepository, InMemoryProductRepository>();
 
             services.AddHealthChecks();
             services.AddHttpCorrelation();
