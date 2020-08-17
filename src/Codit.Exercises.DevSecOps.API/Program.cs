@@ -63,9 +63,7 @@ namespace Codit.Exercises.DevSecOps.API
 #if DEBUG
                         stores.AddConfiguration(config);
 #endif
-
-                        //#error Please provide a valid secret provider, for example Azure Key Vault: https://security.arcus-azure.net/features/secrets/consume-from-key-vault
-                        stores.AddAzureKeyVaultWithManagedServiceIdentity("https://your-keyvault-vault.azure.net/");
+                        stores.AddEnvironmentVariables();
                     })
                     .ConfigureWebHostDefaults(webBuilder =>
                     {
